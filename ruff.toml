@@ -1,0 +1,14 @@
+line-length = 170
+indent-width = 4
+
+[lint]
+extend-select = ["UP", "RUF", "F", "SIM", "ARG", "FIX", "TCH", "Q", "I", "E", "W", "N", "D", "ANN", "ERA"]
+ignore = ["ANN101", "SIM115"]
+
+[lint.pydocstyle]
+convention = "google"
+
+[format]
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
