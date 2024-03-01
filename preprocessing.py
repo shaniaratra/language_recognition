@@ -2,6 +2,7 @@
 import logging
 import logging.config
 
+import numpy as np
 import pandas as pd
 
 logging.config.fileConfig("logging.conf")
@@ -27,6 +28,8 @@ class Preprocessing:
         self.data["Text"] = self.data["Text"].astype(str)
         self.data["language"] = self.data["language"].astype(str)
 
+        self.data = self.data.iloc[:].values
+
     def categorize_rules(self) -> None:
         """Categorize languages by rules developed."""
         rules = pd.read_csv("rules.csv")
@@ -37,7 +40,6 @@ def main() -> None:
     """Main to test preprocessing."""
     preprocess = Preprocessing("dataset.csv")
     preprocess.process()
-
 
 if __name__ == "__main__":
     main()
